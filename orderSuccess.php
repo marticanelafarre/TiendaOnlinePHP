@@ -1,6 +1,6 @@
 <?php
 if(!isset($_REQUEST['id'])){
-    header("Location: index.php");
+    header("Location: login.html");
 }
 ?>
 <!DOCTYPE html>

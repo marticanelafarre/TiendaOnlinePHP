@@ -5,7 +5,6 @@ include 'dbConfig.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>PHP Shopping Cart Tutorial</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -18,7 +17,7 @@ include 'dbConfig.php';
 </head>
 <body>
 <div class="container">
-    <h1>Products</h1>
+    <h1>Productos</h1>
     <a href="viewCart.php" class="cart-link" title="View Cart"><i class="glyphicon glyphicon-shopping-cart"></i></a>
     <div id="products" class="row list-group">
         <?php
@@ -37,15 +36,17 @@ include 'dbConfig.php';
                             <p class="lead"><?php echo '$'.$row["price"].' USD'; ?></p>
                         </div>
                         <div class="col-md-6">
-                            <a class="btn btn-success" href="cartAction.php?action=addToCart&id=<?php echo $row["id"]; ?>">Add to cart</a>
+                            <br>
+                            <a class="btn btn-success" href="cartAction.php?action=addToCart&id=<?php echo $row["id"]; ?>">Comprar</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <?php } }else{ ?>
-        <p>Product(s) not found.....</p>
-        <?php } ?>
+        <?php
+        }
+    }
+?>
     </div>
 </div>
 </body>

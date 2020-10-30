@@ -50,10 +50,10 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
                 $cart->destroy();
                 header("Location: orderSuccess.php?id=$orderID");
             }else{
-                header("Location: checkout.php");
+                header("Location: factura.php");
             }
         }else{
-            header("Location: checkout.php");
+            header("Location: factura.php");
         }
     }else{
         header("Location: lista_productos.php");

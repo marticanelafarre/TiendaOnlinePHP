@@ -44,23 +44,14 @@ header("Content-Type: text/html;charset=utf-8");
 	}
 	
 	else{
-		echo "Login OK";
-		$_SESSION["nick_logueado"]=$nick;
-		?> 
-		
-		<a href="lista_productos.php">Acceder para comprar.</a>
-		
-		<?php
-		
-		
 		$logueado=1;
+		if ($nick=="admin"){
+			header('Location: menu_admin.php');	
+		}
+		else{
+			header('Location: lista_productos.php');		
+		}		
 	}
 	}
-	
-	
-
-
-
-
 
 ?>

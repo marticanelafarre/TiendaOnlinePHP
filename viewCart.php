@@ -6,7 +6,7 @@ $cart = new Cart;
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>View Cart - PHP Shopping Cart Tutorial</title>
+    <title>CARRITO</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -30,13 +30,13 @@ $cart = new Cart;
 </head>
 <body>
 <div class="container">
-    <h1>Shopping Cart</h1>
+    <h1>CARRITO</h1>
     <table class="table">
     <thead>
         <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
             <th>Subtotal</th>
             <th> </th>
         </tr>
@@ -63,11 +63,11 @@ $cart = new Cart;
     </tbody>
     <tfoot>
         <tr>
-            <td><a href="lista_productos.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Shopping</a></td>
+            <td><a href="lista_productos.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continuando comprando</a></td>
             <td colspan="2"></td>
             <?php if($cart->total_items() > 0){ ?>
             <td class="text-center"><strong>Total <?php echo '$'.$cart->total().' USD'; ?></strong></td>
-            <td><a href="checkout.php" class="btn btn-success btn-block">Checkout <i class="glyphicon glyphicon-menu-right"></i></a></td>
+            <td><a href="factura.php" class="btn btn-success btn-block">Factura <i class="glyphicon glyphicon-menu-right"></i></a></td>
             <?php } ?>
         </tr>
     </tfoot>
