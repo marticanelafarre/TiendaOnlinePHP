@@ -46,7 +46,7 @@ header("Content-Type: text/html;charset=utf-8");
 	else{
 		$logueado=1;
 		if ($nick=="admin"){
-			header('Location: menu_admin.php');	
+			header('Location: menu_admin.html');	
 		}
 		else{
 			header('Location: lista_productos.php');		

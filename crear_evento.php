@@ -33,23 +33,24 @@ include 'dbConfig.php';
                     <p class="list-group-item-text"><?php echo $row["description"]; ?></p>
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="lead"><?php echo '$'.$row["price"].' USD'; ?></p>
+                            <p class="lead"><?php echo $row["price"].' €'; ?></p>
                         </div>
                         <div class="col-md-6">
                             <br>
-                            <a class="btn btn-success" href="cartAction.php?action=addToCart&id=<?php echo $row["id"]; ?>">Comprar</a>
+                            <a class="btn btn-danger" href="cartAction.php?action=addToCart&id=<?php echo $row["id"]; ?>">Borrar</a>
+                            <a class="btn btn-warning" href="cartAction.php?action=addToCart&id=<?php echo $row["id"]; ?>">Editar</a>
+
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            </div>            
         <?php
         }
     }
 ?>
     </div>
-    
+    <a class="btn btn-success" href="menu_admin.html">Volver</a>
 </div>
-<a style="margin-left: 83%;" class="btn btn-info" href="login.html">Salir</a>
 </body>
 </html>

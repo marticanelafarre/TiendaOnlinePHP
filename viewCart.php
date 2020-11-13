@@ -67,7 +67,7 @@ $cart = new Cart;
             <td colspan="2"></td>
             <?php if($cart->total_items() > 0){ ?>
             <td class="text-center"><strong>Total <?php echo '$'.$cart->total().' USD'; ?></strong></td>
-            <td><a href="factura.php" class="btn btn-success btn-block">Factura <i class="glyphicon glyphicon-menu-right"></i></a></td>
+            <td><a class="btn btn-success btn-block">PAGAR <i class="glyphicon glyphicon-menu-right"></i></a></td>
             <?php } ?>
         </tr>
     </tfoot>
