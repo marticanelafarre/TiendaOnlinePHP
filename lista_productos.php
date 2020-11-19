@@ -14,7 +14,6 @@ include 'dbConfig.php';
     .cart-link{width: 100%;text-align: right;display: block;font-size: 22px;}
     </style>
 </head>
-</head>
 <body>
 <div class="container">
     <h1>Productos</h1>

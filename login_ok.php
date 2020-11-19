@@ -27,7 +27,11 @@ header("Content-Type: text/html;charset=utf-8");
 		$numero=$fila["cuantos"];
 	}
 	if($numero==0){
-		echo "El usuario no existe";
+		echo "ERROR. El usuario no existe";
+?>
+		<br>
+		<a  href="login.html">Volver al Login</a>
+<?php
 	}
 	else{
 	$instruccion = "select password as cuantos from clientes where nick = '$nick'";
@@ -40,7 +44,7 @@ header("Content-Type: text/html;charset=utf-8");
 	/////////////////
 
 	if (!strcmp($password2 , $password) == 0){
-			echo "Contraseña incorrecta";
+			echo "ERROR. Contraseña incorrecta";
 	}
 	
 	else{
