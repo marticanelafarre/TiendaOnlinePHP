@@ -11,29 +11,20 @@
 	<!-- /Bootstrap -->
 </head>
 
-<body background="Fondo2.png">
+<body background="Fondo2.png"
+style="background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
 	<div class="container" style="background-color:rgba(255,0,0, 0.4); margin-top: 5%; border-radius: 50px;">
 		<div class="row">
 			<div class="col-3"></div>
 			<div class="col-6">
-				<h1 align="center"> Registro </h1>
+				<h1 style="text-align: center;"> Registro </h1>
 				<br>
 
 				<form action="register_ok.php" method="post">
 					<table class="table table-hover">
 						<tr>
-							<td>Nick: </td>
-							<td><input type="text" class="form-control" name="nick" required /></td>
-							<td></td>
-						</tr>
-						<tr>
 							<td>Nombre: </td>
 							<td><input type="text" class="form-control" name="nombre" required /></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>Apellidos: </td>
-							<td><input type="text" class="form-control" name="apellidos" required /></td>
 							<td></td>
 						</tr>
 						<tr>
@@ -42,12 +33,17 @@
 							<td></td>
 						</tr>
 						<tr>
-							<td>Contraseña: </td>
-							<td><input type="password" class="form-control" name="password" required /></td>
+							<td>Telefono: </td>
+							<td><input type="text" class="form-control" name="telefono" required /></td>
 							<td></td>
 						</tr>
 						<tr>
-							<td>Repetir contraseña: </td>
+							<td>direccion: </td>
+							<td><input type="text" class="form-control" name="direccion" required /></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Contraseña: </td>
 							<td><input type="password" class="form-control" name="password" required /></td>
 							<td></td>
 						</tr>

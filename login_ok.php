@@ -6,10 +6,10 @@ $logueado=0;
 header("Content-Type: text/html;charset=utf-8");
 
 
-		$nick = $_POST["nick"];
-		$password = $_POST["password"];
+		$nombre = $_POST["nombre"];
+		$pwd = $_POST["pwd"];
 
-	$con = mysqli_connect('localhost', 'root', 'usbw', 'tienda') or die(mysql_error());
+	$con = mysqli_connect('localhost', 'root', '', 'tienda') or die(mysql_error());
 	
 	if (!$con)
 	{
@@ -18,10 +18,10 @@ header("Content-Type: text/html;charset=utf-8");
 	else
 	{
 		mysqli_set_charset ($con, "utf8");
-		echo "Bienvenido/a ". $nick . "<br>";
+		echo "Bienvenido/a ". $nombre . "<br>";
 	}
 	
-	$instruccion = "select count(*) as cuantos from clientes where nick = '$nick'";
+	$instruccion = "select count(*) as cuantos from clientes where nombre = '$nombre'";
 	$resultado = mysqli_query($con, $instruccion);
 		while ($fila = $resultado->fetch_assoc()) {
 		$numero=$fila["cuantos"];
@@ -34,26 +34,26 @@ header("Content-Type: text/html;charset=utf-8");
 <?php
 	}
 	else{
-	$instruccion = "select password as cuantos from clientes where nick = '$nick'";
+	$instruccion = "select pwd as cuantos from clientes where nombre = '$nombre'";
 	$resultado = mysqli_query($con, $instruccion);
 
 	while ($fila = $resultado->fetch_assoc()) {
-		$password2=$fila["cuantos"];
+		$pwd2=$fila["cuantos"];
 	}
 	
 	/////////////////
 
-	if (!strcmp($password2 , $password) == 0){
+	if (!strcmp($pwd2 , $pwd) == 0){
 			echo "ERROR. Contraseña incorrecta";
 	}
 	
 	else{
 		$logueado=1;
-		if ($nick=="admin"){
+		if ($nombre=="admin"){
 			header('Location: menu_admin.html');	
 		}
 		else{
-			header('Location: lista_productos.php');		
+			header('Location: index.php');		
 		}		
 	}
 	}
