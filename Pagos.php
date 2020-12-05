@@ -21,7 +21,6 @@ $custRow = $query->fetch_assoc();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Pagos - PHP Carrito de compras Tutorial</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -29,32 +28,21 @@ $custRow = $query->fetch_assoc();
     <style>
     .container{padding: 20px;}
     .table{width: 65%;float: left;}
-    .shipAddr{width: 30%;float: left;margin-left: 30px;}
-    .footBtn{width: 95%;float: left;}
+    .shipAddr{width: 30%;float: left;margin-left: 40px; margin-top:-40px}
     .orderBtn {float: right;}
     </style>
 </head>
 <body>
 <div class="container">
-<div class="panel panel-default">
-<div class="panel-heading"> 
-
-<ul class="nav nav-pills">
-  <li role="presentation"><a href="index.php">Inicio</a></li>
-  <li role="presentation"><a href="VerCarta.php">Ver Carta</a></li>
-  <li role="presentation" class="active"><a href="Pagos.php">Pagos</a></li>
-</ul>
-</div>
-
 <div class="panel-body">
-    <h1>Vista previa de la Orden</h1>
+    <h1>Resumen</h1>
     <table class="table">
     <thead>
         <tr>
             <th>Producto</th>
             <th>Pricio</th>
             <th>Cantidad</th>
-            <th>Sub total</th>
+            <th>Subtotal</th>
         </tr>
     </thead>
     <tbody>
@@ -66,12 +54,12 @@ $custRow = $query->fetch_assoc();
         ?>
         <tr>
             <td><?php echo $item["nombre"]; ?></td>
-            <td><?php echo '$'.$item["precio"].' €'; ?></td>
+            <td><?php echo $item["precio"].' €'; ?></td>
             <td><?php echo $item["qty"]; ?></td>
-            <td><?php echo '$'.$item["subtotal"].' €'; ?></td>
+            <td><?php echo $item["subtotal"].' €'; ?></td>
         </tr>
         <?php } }else{ ?>
-        <tr><td colspan="4"><p>No hay articulos en tu carta......</p></td>
+        <tr><td colspan="4"><p>No has selecionado ningun producto.</p></td>
         <?php } ?>
     </tbody>
     <tfoot>
@@ -84,18 +72,17 @@ $custRow = $query->fetch_assoc();
     </tfoot>
     </table>
     <div class="shipAddr">
-        <h4>Detalles de envío</h4>
-        <p><?php echo $custRow['nombre']; ?></p>
-        <p><?php echo $custRow['correo']; ?></p>
-        <p><?php echo $custRow['telefono']; ?></p>
-        <p><?php echo $custRow['direccion']; ?></p>
+        <h4><b>Detalles de envio:</b></h4>
+        <p><?php echo 'Nombre: ' . $custRow['nombre']; ?></p>
+        <p><?php echo 'Correo: ' . $custRow['correo']; ?></p>
+        <p><?php echo 'Telefono: ' . $custRow['telefono']; ?></p>
+        <p><?php echo 'Dirección: ' . $custRow['direccion']; ?></p>
     </div>
     <div class="footBtn">
-        <a href="index.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Comprando</a>
-        <a href="AccionCarta.php?action=placeOrder" class="btn btn-success orderBtn">Realizar pedido <i class="glyphicon glyphicon-menu-right"></i></a>
-    </div>
+    <a href="index.php" class="btn btn-info"><i class="glyphicon glyphicon-circle-arrow-left"></i> Seguir Comprando</a>
+    <a href="AccionCarta.php?action=placeOrder" class="btn btn-success orderBtn">Realizar pedido <i class="glyphicon glyphicon-saved"></i></a>   
+</div>
         </div>
- <div class="panel-footer">TiendaPHP</div>
  </div><!--Panek cierra-->
 </div>
 </body>

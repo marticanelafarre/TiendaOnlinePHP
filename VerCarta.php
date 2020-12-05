@@ -10,7 +10,9 @@ $cart = new Cart;
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <style>
+        .container{padding: 20px;}
+    </style>
     <script>
     function updateCartItem(obj,id){
         $.get("cartAction.php", {action:"updateCartItem", id:id, qty:obj.value}, function(data){
@@ -26,19 +28,7 @@ $cart = new Cart;
 </head>
 <body>
 <div class="container">
-<div class="panel panel-default">
-<div class="panel-heading"> 
-
-<ul class="nav nav-pills">
-  <li role="presentation"><a href="index.php">Inicio</a></li>
-  <li role="presentation" class="active"><a href="VerCarta.php">Ver Carta</a></li>
-  <li role="presentation"><a href="Pagos.php">Pagos</a></li>
-</ul>
-</div>
-
 <div class="panel-body">
-
-
     <h1>Carrito de compras</h1>
     <table class="table">
     <thead>
@@ -63,28 +53,28 @@ $cart = new Cart;
             <td><?php echo $item["qty"]; ?></td>
             <td><?php echo $item["subtotal"].' €'; ?></td>
             <td>
-                <a href="AccionCarta.php?action=removeCartItem&id=<?php echo $item["rowid"]; ?>" class="btn btn-danger" onclick="return confirm('Confirma eliminar?')"><i class="glyphicon glyphicon-trash"></i></a>
+                <a href="AccionCarta.php?action=removeCartItem&id=<?php echo $item["rowid"]; ?>" class="btn btn-danger" onclick="return confirm('Seguro que lo quieres eliminar?')"><i class="glyphicon glyphicon-remove"></i> Eliminar</a>
             </td>
         </tr>
         <?php } }else{ ?>
-        <tr><td colspan="5"><p>No tienes ningun producto en el carrito</p></td>
+        <tr><td colspan="5"><p>No tienes ningun producto en el carrito.</p></td>
         <?php } ?>
     </tbody>
     <tfoot>
         <tr>
-            <td><a href="index.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Comprando</a></td>
+            <td><a href="index.php" class="btn btn-info"><i class="glyphicon glyphicon-circle-arrow-left"></i> Seguir Comprando</a></td>
             <td colspan="2"></td>
             <?php if($cart->total_items() > 0){ ?>
             <td class="text-center"><strong>Total: <?php echo $cart->total().' €'; ?></strong></td>
-            <td><a href="Pagos.php" class="btn btn-success btn-block">Pagos <i class="glyphicon glyphicon-menu-right"></i></a></td>
+            <td><a href="Pagos.php" class="btn btn-success btn-block">Pagar <i class="glyphicon glyphicon-circle-arrow-right"></i></a></td>
             <?php } ?>
         </tr>
     </tfoot>
     </table>
     
     </div>
- <div class="panel-footer">TiendaPHP</div>
- </div><!--Panek cierra-->
+
+ </div>
  
 </div>
 </body>
