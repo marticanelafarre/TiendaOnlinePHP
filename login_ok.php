@@ -45,6 +45,10 @@ header("Content-Type: text/html;charset=utf-8");
 
 	if (!strcmp($pwd2 , $pwd) == 0){
 			echo "ERROR. Contraseña incorrecta";
+?>
+		<br>
+		<a  href="login.html">Volver al Login</a>
+<?php
 	}
 	
 	else{

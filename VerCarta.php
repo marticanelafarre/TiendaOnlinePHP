@@ -53,7 +53,7 @@ $cart = new Cart;
             <td><?php echo $item["qty"]; ?></td>
             <td><?php echo $item["subtotal"].' €'; ?></td>
             <td>
-                <a href="AccionCarta.php?action=removeCartItem&id=<?php echo $item["rowid"]; ?>" class="btn btn-danger" onclick="return confirm('Seguro que lo quieres eliminar?')"><i class="glyphicon glyphicon-remove"></i> Eliminar</a>
+                <a href="AccionCarta.php?action=removeCartItem&id=<?php echo $item["rowid"]; ?>" class="btn btn-danger " onclick="return confirm('Seguro que lo quieres eliminar?')"><i class="glyphicon glyphicon-remove"></i> Eliminar</a>
             </td>
         </tr>
         <?php } }else{ ?>

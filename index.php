@@ -10,8 +10,9 @@ include 'Configuracion.php';
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
     .container{padding: 20px;}
-    .carrito{float: right; margin-top: -55px}
     .boton{margin-left: 50px; margin-top: 10px}
+    .carrito{margin-left: 880px; margin-top: -87px;}
+    .salir{float: right; margin-left:10px; margin-top: -55px}
     </style>
 </head>
 </head>
@@ -19,6 +20,7 @@ include 'Configuracion.php';
 <div class="container">
 <div class="panel-body">
     <h1>Tienda</h1>
+    <a href="login.html" class="btn btn-danger btn-lg salir"><span class="glyphicon glyphicon-off"> Salir</span></a>
     <a href="VerCarta.php" class="btn btn-info btn-lg carrito"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a>
     <div id="products" class="row list-group">
         <?php
