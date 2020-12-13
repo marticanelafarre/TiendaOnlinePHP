@@ -19,14 +19,15 @@
 	</head>
 	
 	<body>
-		
+		<br>
 		<div class="container">
 			<div class="row">
 				<h2 style="text-align:center">GESTION USUARIOS</h2>
 			</div>
 			<div class="row">
-                <a href="admin_usuarios.php" class="btn btn-warning btn-lg boton">Volver</a>
+				<a href="login.html" class="btn btn-danger btn-lg boton"><i class="glyphicon glyphicon-off"></i> Salir</a>
 				<a href="nuevo_usuario.php" class=" btn btn-primary btn-lg boton12">Nuevo Usuario</a>
+				<a href="menu_admin.html" class="btn btn-info btn-lg boton12"><i class="glyphicon glyphicon-circle-arrow-left"></i> Volver</a>
 			</div>
 			<br>
 			
@@ -59,7 +60,7 @@
                                 <td><?php echo $row['pwd']; ?></td>
 								<td>
                                     <a href="modificar_usuarios.php?id=<?php echo $row['id']; ?>"><span class="btn btn-info glyphicon glyphicon-pencil"></span></a>
-                                    <a href="#" data-href="eliminar.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="btn btn-danger boton2 glyphicon glyphicon-trash"></span></a>
+                                    <a href="#" data-href="eliminar_usuario.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="btn btn-danger boton2 glyphicon glyphicon-trash"></span></a>
                                 </td>
                             </tr>
         <?php } }else{ ?>
@@ -82,12 +83,12 @@
 					</div>
 					
 					<div class="modal-body">
-						¿Desea eliminar este registro?
+						Seguro que quiere eliminar este usuario?
 					</div>
 					
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-						<a class="btn btn-danger btn-ok">Delete</a>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+						<a class="btn btn-danger btn-ok">Eliminar</a>
 					</div>
 				</div>
 			</div>

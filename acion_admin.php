@@ -10,20 +10,21 @@ include 'Configuracion.php';
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
     .container{padding: 20px;}
-    .boton{margin-left: 50px; margin-top: 10px}
-    .carrito{margin-left: 880px; margin-top: -87px;}
-    .salir{float: right; margin-left:10px; margin-top: -55px}
+    .boton{float: right;}
+    .boton12{float: right; margin-right: 5px}
+    .boton1{float: right; margin-right:5px;}
     </style>
 </head>
 </head>
 <body>
 <div class="container">
 <div class="panel-body">
-    <h1>Tienda</h1>
-    <a href="login.html" class="btn btn-danger btn-lg salir"><span class="glyphicon glyphicon-off"> Salir</span></a>
-    <a href="menu_admin.html" class="btn btn-info btn-lg carrito"><i class="glyphicon glyphicon-circle-arrow-left"></i> Volver</a>
-
+    <h2 style="text-align:center">GESTION PRODUCTOS</h2>
+        <a href="login.html" class="btn btn-danger btn-lg boton"><i class="glyphicon glyphicon-off"></i> Salir</a>
+		<a href="nuevo_producto.php" class=" btn btn-primary btn-lg boton12">Nuevo Producto</a>
+		<a href="menu_admin.html" class="btn btn-info btn-lg boton12"><i class="glyphicon glyphicon-circle-arrow-left"></i> Volver</a>
     <div id="products" class="row list-group">
+    <br><br><br><br>
         <?php
         //cogemos las filas de la tabla productos. 
         $query = $db->query("SELECT * FROM mis_productos ORDER BY id DESC LIMIT 10");
@@ -41,8 +42,8 @@ include 'Configuracion.php';
                             <p class="lead"><?php echo $row["precio"].' €'; ?></p>
                         </div>
                         <div class="col-md-6">
-                            <a class="btn btn-warning boton" href="#" onclick="return confirm('Seguro que lo quieres eliminar?')"><i class="glyphicon glyphicon-trash"></i> Eliminar</a>
-                            <a class="btn btn-primary boton" href="#"><i class="glyphicon glyphicon-pencil"></i> Modificar</a>
+                            <a href="#" data-href="eliminar_producto.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="btn btn-danger boton glyphicon glyphicon-trash"></span></a>
+                            <a href="modificar_producto.php?id=<?php echo $row['id']; ?>"><span class="btn btn-info boton1 glyphicon glyphicon-pencil"></span></a>
                         </div>
                     </div>
                 </div>
@@ -51,6 +52,35 @@ include 'Configuracion.php';
         <?php } }else{ ?>
         <p>Sin productos</p>
         <?php } ?>
+        <!-- Modal -->
+		<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">Eliminar Producto</h4>
+					</div>
+					
+					<div class="modal-body">
+						Seguro que quiere eliminar este producto?
+					</div>
+					
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+						<a class="btn btn-danger btn-ok">Eliminar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			$('#confirm-delete').on('show.bs.modal', function(e) {
+				$(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+				
+				$('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+			});
+		</script>	
     </div>
         </div>
  </div>< 
