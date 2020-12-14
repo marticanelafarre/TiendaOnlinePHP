@@ -11,7 +11,7 @@ if (isset($_POST["nombre"]))
 	$direccion = $_POST["direccion"];
 	$pwd = $_POST["pwd"];
 
-	$con = mysqli_connect('localhost', 'root', '', 'tienda') or die(mysql_error());
+	$con = mysqli_connect('localhost', 'root', 'usbw', 'tienda') or die(mysql_error());
 	
 	if (!$con)
 	{
