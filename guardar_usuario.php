@@ -1,7 +1,7 @@
 <?php
 	include 'Configuracion.php';
 
-header("Content-Type: text/html;charset=utf-8");
+
 if (isset($_POST["nombre"]))
 {
 	$nombre = $_POST["nombre"];
@@ -10,7 +10,7 @@ if (isset($_POST["nombre"]))
 	$direccion = $_POST["direccion"];
 	$pwd = $_POST["pwd"];
 
-	$con = mysqli_connect('localhost', 'root', '', 'tienda') or die(mysql_error());
+	$con = mysqli_connect('localhost', 'root', 'usbw', 'tienda') or die(mysql_error());
 	
 	if (!$con)
 	{
@@ -46,12 +46,12 @@ if (isset($_POST["nombre"]))
 	}
 	else
 	{
-		echo "El nick $nick no está disponible";
+		echo "El nombre $nombre del usuario no está disponible";
 	}
 
 }
 else 
 {
-	echo ("ERROR: No se puede introducir un nick en blanco");
+	echo ("ERROR: No se puede introducir un nombre en blanco");
 }
 ?>

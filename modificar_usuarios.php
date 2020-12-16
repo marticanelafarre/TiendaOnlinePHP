@@ -1,10 +1,18 @@
 <?php
 	include 'Configuracion.php';
+
+	$conn = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
+		
+	if (!$conn) {
+		die("Connection failed: " . mysqli_connect_error());
 	
-	$id = $_GET['id'];
-	
-    $sql = "SELECT * FROM clientes WHERE id = '$id'";
-	
+	}   
+	if(isset($_GET['id'])){
+	$id=$_GET['id'];
+	$sql="SELECT * FROM clientes WHERE ID='$id'";
+	$result=mysql_query($sql); 
+}
+
 ?>
 <html lang="es">
 	<head>
@@ -24,41 +32,40 @@
 				<h3 style="text-align:center">MODIFICAR USUARIO</h3>
 			</div>
 			
-			<form class="form-horizontal" method="POST" action="actualizar_usuario.php" autocomplete="off">
+			<form class="form-horizontal" method="POST" action="actualizar_usuario.php?id=<?php echo $_GET['$id']?>">
+				<input type="hidden" id="id" name="id" value="<?php echo $row['id']; ?>" />
 				<div class="form-group">
 					<label for="nombre" class="col-sm-2 control-label">Nombre</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" value="<?php echo $row['nombre']; ?>" required>
+						<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre"  required>
 					</div>
 				</div>
-				
-				<input type="hidden" id="id" name="id" value="<?php echo $row['id']; ?>" />
-				
+								
 				<div class="form-group">
 					<label for="email" class="col-sm-2 control-label">Correo</label>
 					<div class="col-sm-10">
-						<input type="email" class="form-control" id="correo" name="correo" placeholder="Correo" value="<?php echo $row['correo']; ?>"  required>
+						<input type="email" class="form-control" id="correo" name="correo" placeholder="Correo" required>
 					</div>
 				</div>
 				
 				<div class="form-group">
 					<label for="telefono" class="col-sm-2 control-label">Telefono</label>
 					<div class="col-sm-10">
-						<input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Telefono" value="<?php echo $row['telefono']; ?>" >
+						<input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Telefono" >
 					</div>
 				</div>
                 
                 <div class="form-group">
 					<label for="telefono" class="col-sm-2 control-label">Direccion</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" value="<?php echo $row['direccion']; ?>" >
+						<input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" >
 					</div>
                 </div>
                 
                 <div class="form-group">
 					<label for="telefono" class="col-sm-2 control-label">Constraseña</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="pwd" name="pwd" placeholder="Constraseña" value="<?php echo $row['pwd']; ?>" >
+						<input type="text" class="form-control" id="pwd" name="pwd" placeholder="Constraseña" >
 					</div>
 				</div>
 	
