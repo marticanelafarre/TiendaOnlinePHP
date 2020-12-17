@@ -1,7 +1,6 @@
 <?php
 	include 'Configuracion.php';
 
-header("Content-Type: text/html;charset=utf-8");
 if (isset($_POST["nombre"]))
 {
 	$nombre = $_POST["nombre"];
@@ -23,7 +22,7 @@ if (isset($_POST["nombre"]))
 	//Inserción de datos
 	
 	//Primero compruebo si el nombre existe
-	$instruccion = "select count(*) as cuantos from clientes where nombre = '$nombre'";
+	$instruccion = "select count(*) as cuantos from mis_productos where nombre = '$nombre'";
 	$res = mysqli_query($con, $instruccion);
 	$datos = mysqli_fetch_assoc($res);
 	

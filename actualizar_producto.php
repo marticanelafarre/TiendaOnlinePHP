@@ -8,9 +8,8 @@ if (isset($_POST["nombre"]))
 	$nombre = $_POST["nombre"];
 	$desc = $_POST["desc"];
 	$precio = $_POST["precio"];
-ç
 
-	$con = mysqli_connect('localhost', 'root', '', 'tienda') or die(mysql_error());
+	$con = mysqli_connect('localhost', 'root', 'usbw', 'tienda') or die(mysql_error());
 	
 	if (!$con)
 	{
@@ -31,8 +30,10 @@ if (isset($_POST["nombre"]))
 	
 	if ($datos['cuantos'] == 0)
 	{
-		$instruccion = "UPDATE mis_productos SET nombre='$nombre', desc='$desc', precio='$precio' WHERE id = '$id'";
+		$instruccion = "UPDATE mis_productos SET nombre='$nombre', desc='$desc', precio='$precio', estado=1 WHERE id = '$id'";
 		$res = mysqli_query($con, $instruccion);
+		
+		
 		if (!$res) 
 		{
 			die("No se ha podido modificar el producto");

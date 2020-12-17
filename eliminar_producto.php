@@ -4,8 +4,8 @@
  
 	$id = $_GET['id'];
 	
-	$query_eliminar = "DELETE * FROM mis_productos WHERE id = '$id'";
-    
+	$query_eliminar = "DELETE FROM mis_productos WHERE id = '$id'";
+    $db->query($query_eliminar);
 
 ?>
  

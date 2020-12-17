@@ -1,7 +1,6 @@
 <?php
 	include 'Configuracion.php';
 
-
 if (isset($_POST["nombre"]))
 {
 	$nombre = $_POST["nombre"];

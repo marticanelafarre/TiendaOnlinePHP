@@ -2,9 +2,10 @@
 	include 'Configuracion.php';
 	
 	$id = $_GET['id'];
-	
-    $sql = "SELECT * FROM mis_productos WHERE id = '$id'";
-	
+	$query =  $db->query("SELECT * FROM mis_productos WHERE id = '$id'");
+	$row = $query->fetch_assoc();
+
+
 ?>
 <html lang="es">
 	<head>
@@ -37,7 +38,7 @@
 				<div class="form-group">
 					<label for="email" class="col-sm-2 control-label">Descripcion:</label>
 					<div class="col-sm-10">
-						<input type="email" class="form-control" id="desc" name="desc" placeholder="Descripcion" value="<?php echo $row['desc']; ?>"  required>
+						<input type="text" class="form-control" id="desc" name="desc" placeholder="Descripcion" value="<?php echo $row['desc']; ?>"  required>
 					</div>
 				</div>
 				

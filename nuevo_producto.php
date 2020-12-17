@@ -40,7 +40,7 @@
 					
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<a href="admin_usuarios.php" class="btn btn-info">Volver</a>
+						<a href="acion_admin.php" class="btn btn-info">Volver</a>
                         <button type="submit" class="btn btn-warning">Guardar</button>
                     </div>
 				</div>

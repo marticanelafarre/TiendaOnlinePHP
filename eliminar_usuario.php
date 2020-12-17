@@ -3,8 +3,8 @@
     include 'Configuracion.php';
  
 	$id = $_GET['id'];
-	
-	$query_eliminar = "DELETE * FROM clientes WHERE id = '$id'";
+		
+	$query_eliminar = "DELETE FROM clientes WHERE id = '$id'";
     $db->query($query_eliminar);
 
 ?>
