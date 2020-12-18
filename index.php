@@ -34,7 +34,7 @@ include 'Configuracion.php';
             <div class="thumbnail">
                 <div class="caption">
                     <h4 class="list-group-item-heading"><?php echo $row["nombre"]; ?></h4>
-                    <p class="list-group-item-text"><?php echo $row["desc"]; ?></p>
+                    <p class="list-group-item-text"><?php echo $row["descripcion"]; ?></p>
                     <div class="row">
                         <div class="col-md-6">
                             <p class="lead"><?php echo $row["precio"].' €'; ?></p>

@@ -50,10 +50,12 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
                 $cart->destroy();
                 header("Location: OrdenExito.php?id=$idPedido");
             }else{
-                header("Location: Pagos.php");
+                $cart->destroy();
+                header("Location: OrdenExito.php?id=$idPedido");
             }
         }else{
-            header("Location: Pagos.php");
+            $cart->destroy();
+            header("Location: OrdenExito.php?id=$idPedido");
         }
     }else{
         header("Location: index.php");

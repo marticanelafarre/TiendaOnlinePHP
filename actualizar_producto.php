@@ -6,7 +6,7 @@ if (isset($_POST["nombre"]))
 {
     $id = $_POST["id"];
 	$nombre = $_POST["nombre"];
-	$desc = $_POST["desc"];
+	$descripcion = $_POST["descripcion"];
 	$precio = $_POST["precio"];
 
 	$con = mysqli_connect('localhost', 'root', 'usbw', 'tienda') or die(mysql_error());
@@ -30,10 +30,9 @@ if (isset($_POST["nombre"]))
 	
 	if ($datos['cuantos'] == 0)
 	{
-		$instruccion = "UPDATE mis_productos SET nombre='$nombre', desc='$desc', precio='$precio', estado=1 WHERE id = '$id'";
+		$instruccion = "UPDATE mis_productos SET id='$id', nombre='$nombre', descripcion='$descripcion', precio='$precio', estado=1 WHERE id = '$id'";
 		$res = mysqli_query($con, $instruccion);
-		
-		
+				
 		if (!$res) 
 		{
 			die("No se ha podido modificar el producto");
@@ -53,6 +52,6 @@ if (isset($_POST["nombre"]))
 }
 else 
 {
-    echo ("ERROR: No se puede introducir un producto en blanco");
+	echo ("ERROR: No se puede introducir un producto en blanco");
 }
 ?>

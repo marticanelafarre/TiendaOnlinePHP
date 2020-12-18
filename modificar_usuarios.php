@@ -1,7 +1,7 @@
 <?php
 	include 'Configuracion.php';
 
-	$id=$_GET['id'];
+	$id = $_GET['id'];
 	$query = $db->query("SELECT * FROM clientes WHERE id='$id'");
 	$row = $query->fetch_assoc();
 
@@ -25,8 +25,10 @@
 				<h3 style="text-align:center">MODIFICAR USUARIO</h3>
 			</div>
 			
-			<form class="form-horizontal" method="POST" action="actualizar_usuario.php?id=<?php echo $_GET['$id']?>">
-				<input type="hidden" id="id" name="id" value="<?php echo $row['$id']?>" />
+			<form class="form-horizontal" method="POST" action="actualizar_usuario.php" autocomplete="off">
+
+				<input type="hidden" id="id" name="id" value="<?php echo $row['id']; ?>" />
+
 				<div class="form-group">
 					<label for="nombre" class="col-sm-2 control-label">Nombre</label>
 					<div class="col-sm-10">

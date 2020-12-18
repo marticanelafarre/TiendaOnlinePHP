@@ -26,19 +26,20 @@
 			</div>
 			
 			<form class="form-horizontal" method="POST" action="actualizar_producto.php" autocomplete="off">
+			
+				<input type="hidden" id="id" name="id" value="<?php echo $row['id']; ?>" />
+
 				<div class="form-group">
 					<label for="nombre" class="col-sm-2 control-label">Nombre del Producto:</label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" value="<?php echo $row['nombre']; ?>" required>
 					</div>
 				</div>
-				
-				<input type="hidden" id="id" name="id" value="<?php echo $row['id']; ?>" />
-				
+								
 				<div class="form-group">
 					<label for="email" class="col-sm-2 control-label">Descripcion:</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="desc" name="desc" placeholder="Descripcion" value="<?php echo $row['desc']; ?>"  required>
+						<input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion" value="<?php echo $row['descripcion']; ?>"  required>
 					</div>
 				</div>
 				

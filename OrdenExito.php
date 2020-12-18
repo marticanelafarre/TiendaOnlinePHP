@@ -10,26 +10,20 @@ if(!isset($_REQUEST['id'])){
     <meta charset="utf-8">
     <style>
     .container{padding: 20px;}
-    p{color: #34a853;font-size: 18px;}
+    p{color: #66D45B;font-size: 18px;}
     </style>
 </head>
 </head>
 <body>
 <div class="container">
-<div class="panel panel-default">
-<div class="panel-heading"> 
-
-<ul class="nav nav-pills">
-  <li role="presentation"><a href="index.php">Inicio</a></li>
-</ul>
-</div>
-
+<div class="panel-heading">
 <div class="panel-body">
-
-    <h1>Estado de su Orden</h1>
+    <h1>Estado del pedido</h1>
+    <h3><p>Estimado Cliente,</p></h3>
     <p>Su pedido ha sido enviado exitosamente. La ID del pedido es #<?php echo $_GET['id']; ?></p>
-           </div>
+    </div>
  </div><!--Panek cierra-->
+ </div>
 </div>
 </body>
 </html>
