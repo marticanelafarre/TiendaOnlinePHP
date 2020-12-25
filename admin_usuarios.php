@@ -25,7 +25,35 @@
 				<h2 style="text-align:center">GESTION USUARIOS</h2>
 			</div>
 			<div class="row">
-				<a href="login.html" class="btn btn-danger btn-lg boton"><i class="glyphicon glyphicon-off"></i> Salir</a>
+				<a  href="#" data-href="login.html" class="btn btn-danger btn-lg boton" data-toggle="modal" data-target="#salir"><i class="glyphicon glyphicon-off"></i> Salir</a>
+				    <!-- Modal -->
+					<div class="modal fade" id="salir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Cerrar Sesión</h4>
+                </div>
+                
+                <div class="modal-body">
+                    Seguro que quiere salir de la sesión?
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-danger btn-ok">Salir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('#salir').on('show.bs.modal', function(e) {
+            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+            
+            $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+        });
+    </script>	
 				<a href="nuevo_usuario.php" class=" btn btn-primary btn-lg boton12">Nuevo Usuario</a>
 				<a href="menu_admin.html" class="btn btn-info btn-lg boton12"><i class="glyphicon glyphicon-circle-arrow-left"></i> Volver</a>
 			</div>
@@ -64,7 +92,7 @@
                                 </td>
                             </tr>
         <?php } }else{ ?>
-        <p>Sin productos</p>
+        <p>Sin usuarios</p>
         <?php } ?>
 						
 					</tbody>

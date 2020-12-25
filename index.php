@@ -1,5 +1,7 @@
 <?php
+
 include 'Configuracion.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -11,7 +13,8 @@ include 'Configuracion.php';
     <style>
     .container{padding: 20px;}
     .boton{margin-left: 50px; margin-top: 10px}
-    .carrito{margin-left: 880px; margin-top: -87px;}
+    .carrito{margin-left: 826px; margin-top: -127px;}
+    .boton2{margin-left: 940px; margin-top: -87px;}
     .salir{float: right; margin-left:10px; margin-top: -55px}
     </style>
 </head>
@@ -20,7 +23,36 @@ include 'Configuracion.php';
 <div class="container">
 <div class="panel-body">
     <h1>Tienda</h1>
-    <a href="login.html" class="btn btn-danger btn-lg salir"><span class="glyphicon glyphicon-off"> Salir</span></a>
+    <a href="#" data-href="login.html" class="btn btn-danger btn-lg salir" data-toggle="modal" data-target="#salir"><span data-toggle="modal" class="glyphicon glyphicon-off"> Salir</span></a>
+    <!-- Modal -->
+		<div class="modal fade" id="salir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">Cerrar Sesión</h4>
+					</div>
+					
+					<div class="modal-body">
+						Seguro que quiere salir de la sesión?
+					</div>
+					
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+						<a class="btn btn-danger btn-ok">Salir</a>
+					</div>
+				</div>
+			</div>
+        </div>
+        <script>
+			$('#salir').on('show.bs.modal', function(e) {
+				$(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+				
+				$('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+			});
+		</script>	
+    <a href="perfil_usuario.php" class="btn btn-success btn-lg boton2"><span class="glyphicon glyphicon-user"></span></a>
     <a href="VerCarta.php" class="btn btn-info btn-lg carrito"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a>
     <div id="products" class="row list-group">
         <?php
@@ -51,6 +83,6 @@ include 'Configuracion.php';
         <?php } ?>
     </div>
         </div>
- </div>< 
+ </div>
 </body>
 </html>

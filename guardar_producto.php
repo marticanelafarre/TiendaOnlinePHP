@@ -7,7 +7,7 @@ if (isset($_POST["nombre"]))
 	$desc = $_POST["desc"];
 	$precio = $_POST["precio"];
 
-	$con = mysqli_connect('localhost', 'root', 'usbw', 'tienda') or die(mysql_error());
+	$con = mysqli_connect('localhost', 'root', '', 'tienda') or die(mysql_error());
 	
 	if (!$con)
 	{

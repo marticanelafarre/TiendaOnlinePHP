@@ -9,7 +9,7 @@ if (isset($_POST["nombre"]))
 	$descripcion = $_POST["descripcion"];
 	$precio = $_POST["precio"];
 
-	$con = mysqli_connect('localhost', 'root', 'usbw', 'tienda') or die(mysql_error());
+	$con = mysqli_connect('localhost', 'root', '', 'tienda') or die(mysql_error());
 	
 	if (!$con)
 	{
@@ -24,12 +24,6 @@ if (isset($_POST["nombre"]))
 	//Inserción de datos
 	
 	//Primero compruebo si el nombre existe
-	$instruccion = "select count(*) as cuantos from mis_productos where nombre = '$nombre'";
-	$res = mysqli_query($con, $instruccion);
-	$datos = mysqli_fetch_assoc($res);
-	
-	if ($datos['cuantos'] == 0)
-	{
 		$instruccion = "UPDATE mis_productos SET id='$id', nombre='$nombre', descripcion='$descripcion', precio='$precio', estado=1 WHERE id = '$id'";
 		$res = mysqli_query($con, $instruccion);
 				
@@ -44,14 +38,4 @@ if (isset($_POST["nombre"]))
 			include_once("acion_admin.php");
 		}
 	}
-	else
-	{
-        echo "El nombre $nombre no está disponible";
-	}
-
-}
-else 
-{
-	echo ("ERROR: No se puede introducir un producto en blanco");
-}
 ?>

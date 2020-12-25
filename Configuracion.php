@@ -2,7 +2,7 @@
 //DB details
 $dbHost = 'localhost';
 $dbUsername = 'root';
-$dbPassword = 'usbw';
+$dbPassword = '';
 $dbName = 'tienda';
 
 //Create connection and select DB

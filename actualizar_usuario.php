@@ -11,28 +11,19 @@ if (isset($_POST["nombre"]))
 	$direccion = $_POST["direccion"];
 	$pwd = $_POST["pwd"];
 
-	$con = mysqli_connect('localhost', 'root', 'usbw', 'tienda') or die(mysql_error());
+	$con = mysqli_connect('localhost', 'root', '', 'tienda') or die(mysql_error());
 	
 	if (!$con)
 	{
 		die("No se ha podido realizar la conexión ERROR:" . mysqli_connect_error() . "<br>");
-	}
-	
+	}	
 	else
 	{
 		mysqli_set_charset ($con, "utf8");
 	}
 	
 	//Inserción de datos
-	
-	//Primero compruebo si el nombre existe
-	$instruccion = "select count(*) as cuantos from clientes where nombre = '$nombre'";
-	$res = mysqli_query($con, $instruccion);
-	$datos = mysqli_fetch_assoc($res);
-	
-	if ($datos['cuantos'] == 0)
-	{
-		$instruccion = "UPDATE clientes SET id='$id', nombre='$nombre', correo='$correo', telefono='$telefono', direccion='$direccion', estado=1, pwd='$pwd' WHERE id = '$id'";
+		$instruccion = "UPDATE clientes SET id='$id', nombre='$nombre', correo='$correo', telefono='$telefono', direccion='$direccion', pwd='$pwd' WHERE id = '$id'";
 		$res = mysqli_query($con, $instruccion);
 				
 		if (!$res) 
@@ -46,12 +37,4 @@ if (isset($_POST["nombre"]))
 			include_once("admin_usuarios.php");
 		}
 	}
-	else
-	{
-		echo "El nombre $nombre del usuario no está disponible";	}
-
-}else 
-{
-	echo ("ERROR: No se puede introducir un usuario en blanco");
-}
 ?>

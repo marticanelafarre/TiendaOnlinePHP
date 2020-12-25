@@ -22,10 +22,44 @@
                 <tr>	
                     <td style="text-align: center;"><a href="admin_usuarios.php" class="btn btn-warning"><i class="glyphicon glyp"></i> GESTION USUARIOS</a></td>
                 </tr>
+                <tr>	
+                    <td style="text-align: center;"><a href="generar_archivo.php" class="btn btn-warning"><i class="glyphicon glyp"></i> GENERAR ARCHIVO</a></td>
+                </tr>
             </div>
         </table>
     </form>
-    <a style="margin-left: 20%;" href="login.html" class="btn btn-danger btn-lg boton"><i class="glyphicon glyphicon-off"></i> Salir</a>
+    <a style="margin-left: 20%;" href="#" data-href="login.html" class="btn btn-danger btn-lg boton" data-toggle="modal" data-target="#salir"><i class="glyphicon glyphicon-off"></i> Salir</a>
+
+    <!-- Modal -->
+    <div class="modal fade" id="salir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Cerrar Sesión</h4>
+                </div>
+                
+                <div class="modal-body">
+                    Seguro que quiere salir de la sesión?
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-danger btn-ok">Salir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('#salir').on('show.bs.modal', function(e) {
+            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+            
+            $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+        });
+    </script>	
+
+
 
     <br><br>
 </div>
