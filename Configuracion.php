@@ -1,11 +1,11 @@
 <?php
-//DB details
+//paramentros de la BBDD
 $dbHost = 'localhost';
 $dbUsername = 'root';
 $dbPassword = '';
 $dbName = 'tienda';
 
-//Create connection and select DB
+//creamos la connexion
 $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
 if ($db->connect_error) {

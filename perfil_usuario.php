@@ -22,7 +22,7 @@
 	<body>
 		<div class="container">
 			<div class="row">
-				<h3 style="text-align:center">MODIFICAR USUARIO</h3>
+				<h3 style="text-align:center">PERFIL USUARIO</h3>
 			</div>
 			
 			<form class="form-horizontal" method="POST" action="actualizar_usuario_paraclientes.php" autocomplete="off">

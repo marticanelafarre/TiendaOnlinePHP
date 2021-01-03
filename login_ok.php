@@ -18,7 +18,6 @@ header("Content-Type: text/html;charset=utf-8");
 	else
 	{
 		mysqli_set_charset ($con, "utf8");
-		echo "Bienvenido/a ". $nombre . "<br>";
 	}
 	
 	$instruccion = "select count(*) as cuantos from clientes where nombre = '$nombre'";
@@ -27,11 +26,8 @@ header("Content-Type: text/html;charset=utf-8");
 		$numero=$fila["cuantos"];
 	}
 	if($numero==0){
-		echo "ERROR. El usuario no existe";
-?>
-		<br>
-		<a  href="login.html">Volver al Login</a>
-<?php
+		echo "ERROR. El usuario introducido no existe";
+		echo "<script>setTimeout(\"location = 'login.html';\",1500);</script>";
 	}
 	else{
 	$instruccion = "select pwd as cuantos from clientes where nombre = '$nombre'";
@@ -45,10 +41,8 @@ header("Content-Type: text/html;charset=utf-8");
 
 	if (!strcmp($pwd2 , $pwd) == 0){
 			echo "ERROR. Contraseña incorrecta";
-?>
-		<br>
-		<a  href="login.html">Volver al Login</a>
-<?php
+			echo "<script>setTimeout(\"location = 'login.html';\",1500);</script>";
+
 	}
 	
 	else{
@@ -56,8 +50,7 @@ header("Content-Type: text/html;charset=utf-8");
 		if ($nombre=="admin"){
 			header('Location: menu_admin.html');	
 		}
-		else{
-			
+		else{			
 			header('Location: index.php');		
 		}		
 	}

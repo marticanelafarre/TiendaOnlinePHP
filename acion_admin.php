@@ -19,7 +19,7 @@ include 'Configuracion.php';
 <div class="panel-body">
     <h2 style="text-align:center">GESTION PRODUCTOS</h2>
         <a href="#" data-href="login.html" class="btn btn-danger btn-lg boton" data-toggle="modal" data-target="#salir"><i class="glyphicon glyphicon-off"></i> Salir</a>
-            <!-- Modal -->
+    <!-- Mensaje -->
     <div class="modal fade" id="salir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

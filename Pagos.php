@@ -1,20 +1,18 @@
 <?php
-// include database configuration file
-include 'Configuracion.php';
 
-// initializ shopping cart class
+include 'Configuracion.php';
 include 'La-carta.php';
 $cart = new Cart;
 
-// redirect to home if cart is empty
+// nos vamos a index.php si el carrito esta vacio. 
 if($cart->total_items() <= 0){
     header("Location: index.php");
 }
 
-// set customer ID in session
+// ponemos por defecto el usuario 1 (provisional)
 $_SESSION['sessCustomerID'] = 1;
 
-// get customer details by session customer ID
+// cogemos los datos del usuario selecionado
 $query = $db->query("SELECT * FROM clientes WHERE id = ".$_SESSION['sessCustomerID']);
 $custRow = $query->fetch_assoc();
 ?>
@@ -48,7 +46,7 @@ $custRow = $query->fetch_assoc();
     <tbody>
         <?php
         if($cart->total_items() > 0){
-            //get cart items from session
+            //cogemos los datos del carrito y lo printamos. 
             $cartItems = $cart->contents();
             foreach($cartItems as $item){
         ?>
@@ -83,7 +81,7 @@ $custRow = $query->fetch_assoc();
     <a href="AccionCarta.php?action=placeOrder" class="btn btn-success orderBtn">Realizar pedido <i class="glyphicon glyphicon-saved"></i></a>   
 </div>
         </div>
- </div><!--Panek cierra-->
+ </div>
 </div>
 </body>
 </html>

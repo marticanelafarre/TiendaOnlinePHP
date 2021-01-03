@@ -1,5 +1,5 @@
 <?php
-// initializ shopping cart class
+
 include 'La-carta.php';
 $cart = new Cart;
 ?>
@@ -43,7 +43,7 @@ $cart = new Cart;
     <tbody>
         <?php
         if($cart->total_items() > 0){
-            //get cart items from session
+            //cogemos los articulos del carrito de la sesion
             $cartItems = $cart->contents();
             foreach($cartItems as $item){
         ?>
@@ -73,7 +73,6 @@ $cart = new Cart;
     </table>
     
     </div>
-
  </div>
  
 </div>

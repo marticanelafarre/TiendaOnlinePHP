@@ -33,7 +33,7 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
         header("Location: VerCarta.php");
     }elseif($_REQUEST['action'] == 'placeOrder' && $cart->total_items() > 0 && !empty($_SESSION['sessCustomerID'])){
         // insert order details into database
-        $insertOrder = $db->query("INSERT INTO pedido (idCliente, precioTotal, creado, modificado) VALUES ('".$_SESSION['sessCustomerID']."', '".$cart->total()."', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."')");
+        $insertOrder = $db->query("INSERT INTO pedido (idCliente, precioTotal) VALUES ('".$_SESSION['sessCustomerID']."', '".$cart->total()."')");
         
         if($insertOrder){
             $idPedido = $db->insert_id;
@@ -41,7 +41,7 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
             // get cart items
             $cartItems = $cart->contents();
             foreach($cartItems as $item){
-                $sql .= "INSERT INTO pedidoarticulos (idPedido, idProducto, cantidad) VALUES ('".$orderID."', '".$item['id']."', '".$item['qty']."');";
+                $sql = "INSERT INTO pedidoarticulos (idPedido, idProducto, cantidad) VALUES ('".$orderID."', '".$item['id']."', '".$item['qty']."');";
             }
             // insert order items into database
             $insertOrderItems = $db->multi_query($sql);
@@ -54,8 +54,7 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
                 header("Location: OrdenExito.php?id=$idPedido");
             }
         }else{
-            $cart->destroy();
-            header("Location: OrdenExito.php?id=$idPedido");
+            header("Location: Pagos.php");
         }
     }else{
         header("Location: index.php");

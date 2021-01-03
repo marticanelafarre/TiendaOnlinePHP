@@ -26,6 +26,8 @@ if(!isset($_REQUEST['id'])){
     <p>Su pedido ha sido enviado exitosamente. La ID del pedido es #<?php echo $_GET['id']; ?></p>
     </div>
  </div><!--Panek cierra-->
+ <a href="index.php" class="btn btn-default">Volver a la tienda</a>
+
  </div>
 </div>
 </body>
