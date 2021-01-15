@@ -2,7 +2,7 @@
 //paramentros de la BBDD
 $dbHost = 'localhost';
 $dbUsername = 'root';
-$dbPassword = '';
+$dbPassword = 'usbw';
 $dbName = 'tienda';
 
 //creamos la connexion

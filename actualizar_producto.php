@@ -7,20 +7,11 @@ if (isset($_POST["nombre"])){
 	$nombre = $_POST["nombre"];
 	$descripcion = $_POST["descripcion"];
 	$precio = $_POST["precio"];
-
-	$con = mysqli_connect('localhost', 'root', '', 'tienda') or die(mysql_error());
-	
-	if(!$con){
-		die("No se ha podido realizar la conexión ERROR:" . mysqli_connect_error() . "<br>");
-	}else{
-		mysqli_set_charset ($con, "utf8");
-	}
-	
 	//Inserción de datos
 	
 	//Primero compruebo si el nombre existe
 		$instruccion = "UPDATE mis_productos SET id='$id', nombre='$nombre', descripcion='$descripcion', precio='$precio', estado=1 WHERE id = '$id'";
-		$res = mysqli_query($con, $instruccion);
+		$res = mysqli_query($db, $instruccion);
 				
 		if(!$res){
 			die("No se ha podido modificar el producto");

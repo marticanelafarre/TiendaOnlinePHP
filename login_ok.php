@@ -1,27 +1,20 @@
 <?php
+
+include 'Configuracion.php';
+
 session_start();
 
 $logueado=0;
+
 	
 header("Content-Type: text/html;charset=utf-8");
 
+$nombre = $_POST["nombre"];
+$pwd = $_POST["pwd"];
 
-		$nombre = $_POST["nombre"];
-		$pwd = $_POST["pwd"];
-
-	$con = mysqli_connect('localhost', 'root', '', 'tienda') or die(mysql_error());
-	
-	if (!$con)
-	{
-		die("No se ha podido realizar la conexión ERROR:" . mysqli_connect_error() . "<br>");
-	}
-	else
-	{
-		mysqli_set_charset ($con, "utf8");
-	}
 	
 	$instruccion = "select count(*) as cuantos from clientes where nombre = '$nombre'";
-	$resultado = mysqli_query($con, $instruccion);
+	$resultado = mysqli_query($db, $instruccion);
 		while ($fila = $resultado->fetch_assoc()) {
 		$numero=$fila["cuantos"];
 	}
@@ -31,7 +24,7 @@ header("Content-Type: text/html;charset=utf-8");
 	}
 	else{
 	$instruccion = "select pwd as cuantos from clientes where nombre = '$nombre'";
-	$resultado = mysqli_query($con, $instruccion);
+	$resultado = mysqli_query($db, $instruccion);
 
 	while ($fila = $resultado->fetch_assoc()) {
 		$pwd2=$fila["cuantos"];
