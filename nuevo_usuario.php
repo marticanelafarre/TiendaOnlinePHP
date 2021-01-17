@@ -15,8 +15,8 @@
 			<div class="row">
 				<h3 style="text-align:center">NUEVO USUARIO</h3>
 			</div>
-			
-			<form class="form-horizontal" method="POST" action="guardar_usuario.php" autocomplete="off">
+			<!-- FORMULARIO PARA CREAR UN NUEVO USUARIO -->
+			<form class="form-horizontal" method="POST" action="guardar_usuario.php" autocomplete="off"><!-- pasamos los valores con el metodo post al archivo guardar_usuario.php -->
 				<div class="form-group">
 					<label for="nombre" class="col-sm-2 control-label">Nombre</label>
 					<div class="col-sm-10">
@@ -58,7 +58,7 @@
 						<input type="text" class="form-control" id="pwd2" name="pwd2" placeholder="Contraseña">
 					</div>
 				</div>
-							
+				<!-- BOTONES -->	
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
 						<a href="admin_usuarios.php" class="btn btn-info">Volver</a>

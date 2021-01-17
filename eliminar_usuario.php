@@ -1,11 +1,11 @@
 <?php
 	
-    include 'Configuracion.php';
+    include 'Configuracion.php';//ponemos el fichero de configuracion para conectarse a la bbdd
  
-	$id = $_GET['id'];
+	$id = $_GET['id'];//cojemos la id y la guardmos a la variable $id
 		
-	$query_eliminar = "DELETE FROM clientes WHERE id = '$id'";
-    $db->query($query_eliminar);
+	$query_eliminar = "DELETE FROM clientes WHERE id = '$id'";// creamos setencia para en este caso elimnar el usuario que queremos. 
+    $db->query($query_eliminar);//ejecutamos la setencia en la bbdd.
 
 ?>
  
@@ -20,7 +20,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- /Bootstrap --> 	
 	</head>
-	
+	<!-- MENSAJE QUE SALDRA -->
 	<body>
 		<div class="container">
 			<div class="row">
