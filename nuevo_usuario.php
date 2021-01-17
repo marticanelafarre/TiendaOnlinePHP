@@ -51,6 +51,13 @@
 						<input type="text" class="form-control" id="pwd" name="pwd" placeholder="Contraseña">
 					</div>
 				</div>
+
+				<div class="form-group">
+					<label for="telefono" class="col-sm-2 control-label">Repetir Contraseña</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="pwd2" name="pwd2" placeholder="Contraseña">
+					</div>
+				</div>
 							
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">

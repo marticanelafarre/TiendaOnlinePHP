@@ -8,13 +8,21 @@ if (isset($_POST["nombre"]))
 	$telefono = $_POST["telefono"];
 	$direccion = $_POST["direccion"];
 	$pwd = $_POST["pwd"];
+	$pwd2 = $_POST["pwd2"];
+
 	//Inserción de datos
 	
 	//Primero compruebo si el nombre existe
 	$instruccion = "select count(*) as cuantos from clientes where nombre = '$nombre'";
 	$res = mysqli_query($db, $instruccion);
 	$datos = mysqli_fetch_assoc($res);
-	
+
+    if($pwd!=$pwd2){
+		echo "Error. Las contraseñas introducidas no coinciden";
+		die("<script>setTimeout(\"location = 'nuevo_usuario.php';\",1100);</script>");
+	}
+
+
 	if ($datos['cuantos'] == 0)
 	{
 		$instruccion = "insert into clientes values ('null','$nombre','$correo','$telefono','$direccion', '$pwd')";

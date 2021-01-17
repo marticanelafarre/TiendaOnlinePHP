@@ -19,7 +19,8 @@ if (isset($_POST["nombre"]))
 	$datos = mysqli_fetch_assoc($res);
 	//ahora la pwd
     if($pwd!=$pwd2){
-		die("Error. Las contraseñas introducidas no coinciden");
+		echo "Error. Las contraseñas introducidas no coinciden";
+		die("<script>setTimeout(\"location = 'register.html';\",1100);</script>");
 	}
 	
 	if ($datos['cuantos'] == 0)

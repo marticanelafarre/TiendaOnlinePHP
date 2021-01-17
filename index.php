@@ -57,7 +57,7 @@ include 'Configuracion.php';
     <div id="products" class="row list-group">
         <?php
         //cogemos las filas de la tabla productos. 
-        $query = $db->query("SELECT * FROM mis_productos ORDER BY id DESC LIMIT 10");
+        $query = $db->query("SELECT * FROM mis_productos ORDER BY id DESC");
         if($query->num_rows > 0){ 
             while($row = $query->fetch_assoc()){
         ?>

@@ -10,7 +10,7 @@ if (isset($_POST["nombre"])){
 	//Inserción de datos
 	
 	//Primero compruebo si el nombre existe
-		$instruccion = "UPDATE mis_productos SET id='$id', nombre='$nombre', descripcion='$descripcion', precio='$precio', estado=1 WHERE id = '$id'";
+		$instruccion = "UPDATE mis_productos SET id='$id', nombre='$nombre', descripcion='$descripcion', precio='$precio' WHERE id = '$id'";
 		$res = mysqli_query($db, $instruccion);
 				
 		if(!$res){
