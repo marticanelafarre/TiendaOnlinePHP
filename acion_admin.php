@@ -1,5 +1,5 @@
 <?php
-include 'Configuracion.php';
+include 'Configuracion.php';// incluimos archivo de conexion
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -19,7 +19,7 @@ include 'Configuracion.php';
 <div class="panel-body">
     <h2 style="text-align:center">GESTION PRODUCTOS</h2>
         <a href="#" data-href="login.html" class="btn btn-danger btn-lg boton" data-toggle="modal" data-target="#salir"><i class="glyphicon glyphicon-off"></i> Salir</a>
-    <!-- Mensaje -->
+    <!-- Mensaje de salir -->
     <div class="modal fade" id="salir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -50,6 +50,8 @@ include 'Configuracion.php';
 		<a href="nuevo_producto.php" class=" btn btn-primary btn-lg boton12">Nuevo Producto</a>
 		<a href="menu_admin.html" class="btn btn-info btn-lg boton12"><i class="glyphicon glyphicon-circle-arrow-left"></i> Volver</a>
     <div id="products" class="row list-group">
+
+    <!-- PRODUCTOS -->
     <br><br><br><br>
     <div class="row table-responsive">
 				<table class="table table-striped">

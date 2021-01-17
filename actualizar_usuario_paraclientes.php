@@ -1,5 +1,5 @@
 <?php
-include 'Configuracion.php';
+include 'Configuracion.php';// incluimos archivo de conexion
 
 header("Content-Type: text/html;charset=utf-8");
 if (isset($_POST["nombre"])){
@@ -9,7 +9,7 @@ if (isset($_POST["nombre"])){
 	$telefono = $_POST["telefono"];
 	$direccion = $_POST["direccion"];
 	$pwd = $_POST["pwd"];	
-	//Inserción de datos	
+	//hacemos un update de los datos que nos pasa el archivo perfil_usuario.php
 		$instruccion = "UPDATE clientes SET id='$id', nombre='$nombre', correo='$correo', telefono='$telefono', direccion='$direccion', pwd='$pwd' WHERE id = '$id'";
 		$res = mysqli_query($db, $instruccion);
 				

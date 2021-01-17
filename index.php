@@ -22,7 +22,7 @@ include 'Configuracion.php';
 <body>
 <div class="container">
 <div class="panel-body">
-    <h1>Tienda</h1>
+    <h1>Eventos</h1>
     <a href="#" data-href="login.html" class="btn btn-danger btn-lg salir" data-toggle="modal" data-target="#salir"><span data-toggle="modal" class="glyphicon glyphicon-off"> Salir</span></a>
     <!-- Modal -->
 		<div class="modal fade" id="salir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -53,7 +53,7 @@ include 'Configuracion.php';
 			});
 		</script>	
     <a href="perfil_usuario.php" class="btn btn-success btn-lg boton2"><span class="glyphicon glyphicon-user"></span></a>
-    <a href="VerCarta.php" class="btn btn-info btn-lg carrito"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a>
+    <a href="carrito.php" class="btn btn-info btn-lg carrito"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a>
     <div id="products" class="row list-group">
         <?php
         //cogemos las filas de la tabla productos. 

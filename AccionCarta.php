@@ -3,7 +3,7 @@
 include 'La-carta.php';
 $cart = new Cart;
 
-// include database configuration file
+// incluimos el archivo para los parametros de conexion con la BBDD.
 include 'Configuracion.php';
 if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
     if($_REQUEST['action'] == 'addToCart' && !empty($_REQUEST['id'])){
@@ -19,7 +19,7 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
         );
         
         $insertItem = $cart->insert($itemData);
-        $redirectLoc = $insertItem?'VerCarta.php':'index.php';
+        $redirectLoc = $insertItem?'carrito.php':'index.php';
         header("Location: ".$redirectLoc);
     }elseif($_REQUEST['action'] == 'updateCartItem' && !empty($_REQUEST['id'])){
         $itemData = array(
@@ -30,21 +30,16 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
         echo $updateItem?'ok':'err';die;
     }elseif($_REQUEST['action'] == 'removeCartItem' && !empty($_REQUEST['id'])){
         $deleteItem = $cart->remove($_REQUEST['id']);
-        header("Location: VerCarta.php");
+        header("Location: carrito.php");
     }elseif($_REQUEST['action'] == 'placeOrder' && $cart->total_items() > 0 && !empty($_SESSION['sessCustomerID'])){
-        // insert order details into database
+        // hacemos un insert del pedido que quiere hacer el usuario. 
         $insertOrder = $db->query("INSERT INTO pedido (idCliente, precioTotal) VALUES ('".$_SESSION['sessCustomerID']."', '".$cart->total()."')");
         
         if($insertOrder){
             $idPedido = $db->insert_id;
             $sql = '';
-            // get cart items
+            // cogemos los intem del carrito y lo guardamos en cartItmens
             $cartItems = $cart->contents();
-            foreach($cartItems as $item){
-                $sql = "INSERT INTO pedidoarticulos (idPedido, idProducto, cantidad) VALUES ('".$orderID."', '".$item['id']."', '".$item['qty']."');";
-            }
-            // insert order items into database
-            $insertOrderItems = $db->multi_query($sql);
             
             if($insertOrderItems){
                 $cart->destroy();

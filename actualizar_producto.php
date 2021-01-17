@@ -1,5 +1,5 @@
 <?php
-	include 'Configuracion.php';
+	include 'Configuracion.php';// incluimos el archivo de conexion
 
 header("Content-Type: text/html;charset=utf-8");
 if (isset($_POST["nombre"])){
@@ -7,8 +7,8 @@ if (isset($_POST["nombre"])){
 	$nombre = $_POST["nombre"];
 	$descripcion = $_POST["descripcion"];
 	$precio = $_POST["precio"];
+
 	//Inserción de datos
-	
 	//Primero compruebo si el nombre existe
 		$instruccion = "UPDATE mis_productos SET id='$id', nombre='$nombre', descripcion='$descripcion', precio='$precio' WHERE id = '$id'";
 		$res = mysqli_query($db, $instruccion);

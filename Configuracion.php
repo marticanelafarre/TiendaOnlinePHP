@@ -1,12 +1,12 @@
 <?php
 //paramentros de la BBDD
-$dbHost = 'localhost';
-$dbUsername = 'root';
-$dbPassword = '';
-$dbName = 'tienda';
+$hostname = 'localhost';
+$nombre = 'root';
+$pwd = '';
+$bbdd = 'tienda';
 
 //creamos la connexion
-$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+$db = new mysqli($hostname, $nombre, $pwd, $bbdd);
 
 if ($db->connect_error) {
     die("ERROR. No hay connexión." . $db->connect_error);
