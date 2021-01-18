@@ -1,6 +1,5 @@
 <?php
 include 'Configuracion.php';
-$alummnos=simplexml_load_file('usuariosTienda.xml');
 $cont=0;
 ?>
 
@@ -42,7 +41,10 @@ if($query->num_rows > 0){
 }
 }
 ?>
-
+<?php
+header('Content-type:application/xml');
+header('Content-Disposition: attachment; filename=productostienda.xml');
+?>
         </tbody>
     </table>
     

@@ -2,7 +2,7 @@
 //paramentros de la BBDD
 $hostname = 'localhost';
 $nombre = 'root';
-$pwd = 'usbw';
+$pwd = '';
 $bbdd = 'tienda';
 
 //creamos la connexion
