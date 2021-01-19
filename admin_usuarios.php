@@ -85,7 +85,7 @@
 								<td><?php echo $row['correo']; ?></td>
                                 <td><?php echo $row['telefono']; ?></td>
                                 <td><?php echo $row['direccion']; ?></td>
-                                <td><?php echo $row['pwd']; ?></td>
+                                <td>********</td>
 								<td>
                                     <a href="modificar_usuarios.php?id=<?php echo $row['id']; ?>"><span class="btn btn-info glyphicon glyphicon-pencil"></span></a>
                                     <a href="#" data-href="eliminar_usuario.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="btn btn-danger boton2 glyphicon glyphicon-trash"></span></a>

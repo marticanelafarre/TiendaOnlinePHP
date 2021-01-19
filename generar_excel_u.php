@@ -1,6 +1,6 @@
 <?php
 header('Content-type:application/xls');
-header('Content-Disposition: attachment; filename=productosTIENDA.xls');
+header('Content-Disposition: attachment; filename=usuariosTIENDA.xls');
 include 'Configuracion.php';// incluimos archivo de conexion
 $query = $db->query("SELECT * FROM clientes ORDER BY id");
 
