@@ -10,7 +10,7 @@ if($cart->total_items() <= 0){
 }
 
 // ponemos por defecto el usuario 1 (provisional)
-$_SESSION['sessCustomerID'] = 1;
+$_SESSION['sessCustomerID'] =2;
 
 // cogemos los datos del usuario selecionado
 $query = $db->query("SELECT * FROM clientes WHERE id = ".$_SESSION['sessCustomerID']);

@@ -13,15 +13,21 @@ if (isset($_POST["nombre"]))
 	$pwd2 = $_POST["pwd2"];
 
 	//Inserción de datos
-	//Primero compruebo si el nick existe
-	$instruccion = "select count(*) as cuantos from clientes where nombre = '$nombre'";
-	$res = mysqli_query($db, $instruccion);
-	$datos = mysqli_fetch_assoc($res);
+
 	//ahora la pwd
     if($pwd!=$pwd2){
 		echo "Error. Las contraseñas introducidas no coinciden";
 		die("<script>setTimeout(\"location = 'register.html';\",1100);</script>");
 	}
+
+	if($telefono< 9){
+		echo "Error. El telefono es demasiado corto";
+		die("<script>setTimeout(\"location = 'register.html';\",1100);</script>");
+	}
+		//Primero compruebo si el nick existe
+		$instruccion = "select count(*) as cuantos from clientes where nombre = '$nombre'";
+		$res = mysqli_query($db, $instruccion);
+		$datos = mysqli_fetch_assoc($res);
 	
 	if ($datos['cuantos'] == 0)
 	{
@@ -42,11 +48,15 @@ if (isset($_POST["nombre"]))
 	else
 	{
 		echo "El nombre $nombre no está disponible";
+		die("<script>setTimeout(\"location = 'register.html';\",1100);</script>");
+
 	}
 
 }
 else 
 {
 	echo ("ERROR: No se puede introducir un nick en blanco");
+	die("<script>setTimeout(\"location = 'register.html';\",1100);</script>");
+
 }
 ?>

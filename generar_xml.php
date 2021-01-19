@@ -19,7 +19,7 @@ $cont=0;
                 <th>Correo</th>
                 <th>Telefono</th>
                 <th>Direccion</th>
-                <th>Contrasenya</th>
+                <th>Contraseña</th>
             </tr>
         </thead>
         <tbody>       

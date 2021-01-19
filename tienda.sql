@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Temps de generació: 17-01-2021 a les 13:21:45
+-- Temps de generació: 18-01-2021 a les 21:52:49
 -- Versió del servidor: 10.4.16-MariaDB
 -- Versió de PHP: 7.3.24
 
@@ -88,6 +88,15 @@ CREATE TABLE `pedido` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
+-- Bolcament de dades per a la taula `pedido`
+--
+
+INSERT INTO `pedido` (`id`, `idCliente`, `precioTotal`) VALUES
+(91, 1, 56.00),
+(92, 1, 158.00),
+(93, 1, 16.00);
+
+--
 -- Índexs per a les taules bolcades
 --
 
@@ -124,13 +133,13 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT per la taula `mis_productos`
 --
 ALTER TABLE `mis_productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT per la taula `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- Restriccions per a les taules bolcades

@@ -2,7 +2,7 @@
 	include 'Configuracion.php';
 
 
-	$query = $db->query("SELECT * FROM clientes WHERE id=1");
+	$query = $db->query("SELECT * FROM clientes WHERE id=2");
 	$row = $query->fetch_assoc();
 
 

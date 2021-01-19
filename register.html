@@ -1,5 +1,4 @@
 <html>
-
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<!-- Bootstrap -->
@@ -20,7 +19,7 @@ style="background-repeat: no-repeat; background-attachment: fixed; background-si
 				<h1 style="text-align: center;"> Registro </h1>
 				<br>
 
-				<form action="register_ok.php" method="post">
+				<form action="register_ok.php" method="post" autocomplete="off">
 					<table class="table table-hover">
 						<tr>
 							<td>Nombre: </td>
@@ -29,12 +28,12 @@ style="background-repeat: no-repeat; background-attachment: fixed; background-si
 						</tr>
 						<tr>
 							<td>Correo: </td>
-							<td><input type="text" class="form-control" name="correo" required /></td>
+							<td><input type="email" class="form-control" name="correo" required /></td>
 							<td></td>
 						</tr>
 						<tr>
 							<td>Telefono: </td>
-							<td><input type="text" class="form-control" name="telefono" required /></td>
+							<td><input type="number" minlength="9" class="form-control" name="telefono" required /></td>
 							<td></td>
 						</tr>
 						<tr>

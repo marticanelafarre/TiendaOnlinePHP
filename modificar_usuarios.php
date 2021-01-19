@@ -46,7 +46,7 @@
 				<div class="form-group">
 					<label for="telefono" class="col-sm-2 control-label">Telefono</label>
 					<div class="col-sm-10">
-						<input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Telefono" value="<?php echo $row['telefono']?>" >
+						<input type="number" class="form-control" id="telefono" name="telefono" placeholder="Telefono" value="<?php echo $row['telefono']?>" >
 					</div>
 				</div>
                 
