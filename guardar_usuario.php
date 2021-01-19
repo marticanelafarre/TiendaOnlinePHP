@@ -1,5 +1,5 @@
 <?php
-	include 'Configuracion.php';//ponemos el fichero de configuracion para conectarse a la bbdd
+	include 'Configuracion.php';
 
 if (isset($_POST["nombre"]))
 {
@@ -9,24 +9,25 @@ if (isset($_POST["nombre"]))
 	$direccion = $_POST["direccion"];
 	$pwd = $_POST["pwd"];
 	$pwd2 = $_POST["pwd2"];
+
 	//Inserción de datos
 	
 	//Primero compruebo si el nombre existe
-	$instruccion = "select count(*) as cuantos from clientes where nombre = '$nombre'";// y lo hacemos con una sentencia sql
-	$res = mysqli_query($db, $instruccion);//ejecutamos la funciona
+	$instruccion = "select count(*) as cuantos from clientes where nombre = '$nombre'";
+	$res = mysqli_query($db, $instruccion);
 	$datos = mysqli_fetch_assoc($res);
 
-    if($pwd!=$pwd2){//hacemos una if para ver si la pwd y la pwd2 conciden. En caso de que no conicidan retornara a la pagina nuevo_usuario.
+    if($pwd!=$pwd2){
 		echo "Error. Las contraseñas introducidas no coinciden";
 		die("<script>setTimeout(\"location = 'nuevo_usuario.php';\",1100);</script>");
 	}
 
-	//si es todo correcto: 
+
 	if ($datos['cuantos'] == 0)
 	{
-		$instruccion = "insert into clientes values ('null','$nombre','$correo','$telefono','$direccion', '$pwd')";//cremaos la sentencia en este caso un insert y la guardamos a instruccion
-		$res = mysqli_query($db, $instruccion);//ejecutamos la sentencia creada anteriormente
-		if (!$res)// en caso de haver un error con la bbdd. 
+		$instruccion = "insert into clientes values ('null','$nombre','$correo','$telefono','$direccion', '$pwd')";
+		$res = mysqli_query($db, $instruccion);
+		if (!$res) 
 		{
 			die("No se ha podido crear el usuario");
 		}

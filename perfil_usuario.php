@@ -1,9 +1,9 @@
 <?php
-	include 'Configuracion.php';//ponemos el fichero de configuracion para conectarse a la bbdd
+	include 'Configuracion.php';
 
 
-	$query = $db->query("SELECT * FROM clientes WHERE id=1");//creamos la sentencia en este caso un select para ver el perfil que se ha registrado y obtener sus datos. 
-	$row = $query->fetch_assoc();//lo recogemos por filas y lo ponemos al row. 
+	$query = $db->query("SELECT * FROM clientes WHERE id=1");
+	$row = $query->fetch_assoc();
 
 
 ?>
@@ -24,9 +24,9 @@
 			<div class="row">
 				<h3 style="text-align:center">PERFIL USUARIO</h3>
 			</div>
-			<!-- FOMRULARIO PARA MODIFICAR EL USUARIO -->
-			<form class="form-horizontal" method="POST" action="actualizar_usuario_paraclientes.php" autocomplete="off"><!-- Vamos a pasar los datos via post a actualizar_usuario_paraclientes.php  -->
-					<!-- hidden para que el user no lo vea -->
+			
+			<form class="form-horizontal" method="POST" action="actualizar_usuario_paraclientes.php" autocomplete="off">
+
 				<input type="hidden" id="id" name="id" value="<?php echo $row['id']; ?>" />
 
 				<div class="form-group">
@@ -64,7 +64,7 @@
 					</div>
 				</div>
 	
-				<!-- BOTONES -->
+				
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
 						<a href="index.php" class="btn btn-default">Volver</a>

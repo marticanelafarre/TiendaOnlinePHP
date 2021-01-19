@@ -1,6 +1,6 @@
 <?php
 
-include 'Configuracion.php';//ponemos el fichero de configuracion para conectarse a la bbdd
+include 'Configuracion.php';
 
 ?>
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ include 'Configuracion.php';//ponemos el fichero de configuracion para conectars
 <div class="panel-body">
     <h1>Eventos</h1>
     <a href="#" data-href="login.html" class="btn btn-danger btn-lg salir" data-toggle="modal" data-target="#salir"><span data-toggle="modal" class="glyphicon glyphicon-off"> Salir</span></a>
-    <!-- Modal para confirmar el mensaje para salir de la sesion del usuario. -->
+    <!-- Modal -->
 		<div class="modal fade" id="salir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -51,8 +51,7 @@ include 'Configuracion.php';//ponemos el fichero de configuracion para conectars
 				
 				$('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
 			});
-		</script>
-    <!-- Botones -->	
+		</script>	
     <a href="perfil_usuario.php" class="btn btn-success btn-lg boton2"><span class="glyphicon glyphicon-user"></span></a>
     <a href="carrito.php" class="btn btn-info btn-lg carrito"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a>
     <div id="products" class="row list-group">
@@ -80,7 +79,7 @@ include 'Configuracion.php';//ponemos el fichero de configuracion para conectars
             </div>
         </div>
         <?php } }else{ ?>
-        <p>Sin productos</p><!-- En caso de no haver productos en la lista. -->
+        <p>Sin productos</p>
         <?php } ?>
     </div>
         </div>

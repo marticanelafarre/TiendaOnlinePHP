@@ -1,9 +1,9 @@
 <?php
-	include 'Configuracion.php';//ponemos el fichero de configuracion para conectarse a la bbdd
+	include 'Configuracion.php';
 	
 	$id = $_GET['id'];
-	$query =  $db->query("SELECT * FROM mis_productos WHERE id = '$id'");//cremos la sentencia select
-	$row = $query->fetch_assoc();//obtenimos las filas de los resultados. 
+	$query =  $db->query("SELECT * FROM mis_productos WHERE id = '$id'");
+	$row = $query->fetch_assoc();
 
 
 ?>
@@ -24,15 +24,10 @@
 			<div class="row">
 				<h3 style="text-align:center">MODIFICAR PRODUCTO</h3>
 			</div>
-			<!-- FORMULARIO -->
-			<form class="form-horizontal" method="POST" action="actualizar_producto.php" autocomplete="off"><!-- Pasamos los datos como post a actualizar_producto.php -->
 			
-				<div class="form-group">
-					<label for="nombre" class="col-sm-2 control-label">ID:</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="id" name="id" value="<?php echo $row['id']; ?>" disabled>
-					</div>
-				</div>
+			<form class="form-horizontal" method="POST" action="actualizar_producto.php" autocomplete="off">
+			
+				<input type="hidden" id="id" name="id" value="<?php echo $row['id']; ?>" />
 
 				<div class="form-group">
 					<label for="nombre" class="col-sm-2 control-label">Nombre del Producto:</label>
@@ -54,7 +49,7 @@
 						<input type="tel" class="form-control" id="precio" name="precio" placeholder="Precio" value="<?php echo $row['precio']; ?>" >
 					</div>
 				</div>
-			<!-- BOTONES -->
+			
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
 						<a href="acion_admin.php" class="btn btn-default">Volver</a>

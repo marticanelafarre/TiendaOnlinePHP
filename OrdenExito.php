@@ -1,9 +1,9 @@
 <?php
 
-include 'Configuracion.php';//ponemos el fichero de configuracion para conectarse a la bbdd
+include 'Configuracion.php';
 
 if(!isset($_REQUEST['id'])){
-    header("Location: index.php");//en caso de no tener id no dejara entrar e ira a index.php
+    header("Location: index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -21,7 +21,6 @@ if(!isset($_REQUEST['id'])){
 <div class="container">
 <div class="panel-heading">
 <div class="panel-body">
-    <!-- MENAJE DEL PEDIDO REALIZADO-->
     <h1>Estado del pedido</h1>
     <h3><p>Estimado Cliente,</p></h3>
     <p>Su pedido ha sido enviado exitosamente. La ID del pedido es #<?php echo $_GET['id']; ?></p>

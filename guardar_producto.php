@@ -1,16 +1,16 @@
 <?php
-	include 'Configuracion.php';//ponemos el fichero de configuracion para conectarse a la bbdd
+	include 'Configuracion.php';
 
 if (isset($_POST["nombre"]))
 {
 	$nombre = $_POST["nombre"];
 	$desc = $_POST["desc"];
 	$precio = $_POST["precio"];
-
-	//Inserción de datos	
+	//Inserción de datos
+	
 	//Primero compruebo si el nombre existe
-	$instruccion = "select count(*) as cuantos from mis_productos where nombre = '$nombre'";//hacemos un senteica select y la guardamos a instruccion 
-	$res = mysqli_query($db, $instruccion);//ejecutamos la instruccion en la bbdd
+	$instruccion = "select count(*) as cuantos from mis_productos where nombre = '$nombre'";
+	$res = mysqli_query($db, $instruccion);
 	$datos = mysqli_fetch_assoc($res);
 	
 	if ($datos['cuantos'] == 0)

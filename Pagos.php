@@ -1,7 +1,7 @@
 <?php
 
-include 'Configuracion.php';//ponemos el fichero de configuracion para conectarse a la bbdd
-include 'La-carta.php';// e tambien el fichero de la clase
+include 'Configuracion.php';
+include 'La-carta.php';
 $cart = new Cart;
 
 // nos vamos a index.php si el carrito esta vacio. 
@@ -14,7 +14,7 @@ $_SESSION['sessCustomerID'] = 1;
 
 // cogemos los datos del usuario selecionado
 $query = $db->query("SELECT * FROM clientes WHERE id = ".$_SESSION['sessCustomerID']);
-$custRow = $query->fetch_assoc();//y guardamos los valores por filas en custRow
+$custRow = $query->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +33,6 @@ $custRow = $query->fetch_assoc();//y guardamos los valores por filas en custRow
 <body>
 <div class="container">
 <div class="panel-body">
-    <!-- RESUMEN DEL PEDIDO -->
     <h1>Resumen</h1>
     <table class="table">
     <thead>
@@ -57,7 +56,7 @@ $custRow = $query->fetch_assoc();//y guardamos los valores por filas en custRow
             <td><?php echo $item["qty"]; ?></td>
             <td><?php echo $item["subtotal"].' €'; ?></td>
         </tr>
-        <?php } }else{ ?><!-- en caso de no haver productos -->
+        <?php } }else{ ?>
         <tr><td colspan="4"><p>No has selecionado ningun producto.</p></td>
         <?php } ?>
     </tbody>
@@ -71,14 +70,12 @@ $custRow = $query->fetch_assoc();//y guardamos los valores por filas en custRow
     </tfoot>
     </table>
     <div class="shipAddr">
-        <!-- PRINTAMOS LOS DATOS DEL USUARIO -->
         <h4><b>Detalles de envio:</b></h4>
         <p><?php echo 'Nombre: ' . $custRow['nombre']; ?></p>
         <p><?php echo 'Correo: ' . $custRow['correo']; ?></p>
         <p><?php echo 'Telefono: ' . $custRow['telefono']; ?></p>
         <p><?php echo 'Dirección: ' . $custRow['direccion']; ?></p>
     </div>
-    <!-- BOTONES -->
     <div class="footBtn">
     <a href="index.php" class="btn btn-info"><i class="glyphicon glyphicon-circle-arrow-left"></i> Seguir Comprando</a>
     <a href="AccionCarta.php?action=placeOrder" class="btn btn-success orderBtn">Realizar pedido <i class="glyphicon glyphicon-saved"></i></a>   

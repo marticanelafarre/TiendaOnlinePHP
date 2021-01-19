@@ -15,8 +15,8 @@
 			<div class="row">
 				<h3 style="text-align:center">NUEVO PRODUCTO</h3>
 			</div>
-			<!-- FORMULARIO PARA CREAR UN NUEVO PRODUCTO -->
-			<form class="form-horizontal" method="POST" action="guardar_producto.php" autocomplete="off"><!-- pasamos los valores con el metodo post al archivo guardar_producto.php -->
+			
+			<form class="form-horizontal" method="POST" action="guardar_producto.php" autocomplete="off">
 				<div class="form-group">
 					<label for="nombre" class="col-sm-2 control-label">Nombre del Producto:</label>
 					<div class="col-sm-10">
@@ -37,7 +37,7 @@
 						<input type="number" class="form-control" id="precio" name="precio" placeholder="Precio">
 					</div>
 				</div>
-				<!-- BOTONES -->	
+					
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
 						<a href="acion_admin.php" class="btn btn-info">Volver</a>
