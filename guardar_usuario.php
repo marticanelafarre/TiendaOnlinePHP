@@ -1,5 +1,6 @@
 <?php
-	include 'Configuracion.php';
+include 'Configuracion.php';
+header("Content-Type: text/html;charset=utf-8");
 
 if (isset($_POST["nombre"]))
 {
@@ -25,7 +26,8 @@ if (isset($_POST["nombre"]))
 
 	if ($datos['cuantos'] == 0)
 	{
-		$instruccion = "insert into clientes values ('null','$nombre','$correo','$telefono','$direccion', '$pwd')";
+		$pass=sha1($_POST['pwd']);
+		$instruccion = "insert into clientes values ('null','$nombre','$correo','$telefono','$direccion', '$pass')";
 		$res = mysqli_query($db, $instruccion);
 		if (!$res) 
 		{

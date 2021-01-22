@@ -4,6 +4,7 @@
 	$id = $_GET['id'];
 	$query = $db->query("SELECT * FROM clientes WHERE id='$id'");
 	$row = $query->fetch_assoc();
+	$pass=sha1($row['pwd']);
 
 
 ?>
@@ -60,7 +61,7 @@
                 <div class="form-group">
 					<label for="telefono" class="col-sm-2 control-label">Constraseña</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="pwd" name="pwd" placeholder="Constraseña" value="<?php echo $row['pwd']?>">
+						<input type="text" class="form-control" id="pwd" name="pwd" placeholder="Constraseña">
 					</div>
 				</div>
 	

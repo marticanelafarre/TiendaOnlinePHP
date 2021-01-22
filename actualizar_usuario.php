@@ -9,7 +9,7 @@ if (isset($_POST["nombre"]))
 	$correo = $_POST["correo"];
 	$telefono = $_POST["telefono"];
 	$direccion = $_POST["direccion"];
-	$pwd = $_POST["pwd"];
+	$pwd=sha1($_POST['pwd']);
 
 	//hacemos una instrucion de sql, en este caso un update y lo ponemos a instruccion 
 		$instruccion = "UPDATE clientes SET id='$id', nombre='$nombre', correo='$correo', telefono='$telefono', direccion='$direccion', pwd='$pwd' WHERE id = '$id'";

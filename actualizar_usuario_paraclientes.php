@@ -8,7 +8,8 @@ if (isset($_POST["nombre"])){
 	$correo = $_POST["correo"];
 	$telefono = $_POST["telefono"];
 	$direccion = $_POST["direccion"];
-	$pwd = $_POST["pwd"];	
+	$pass=sha1($_POST['pwd']);
+
 	//hacemos un update de los datos que nos pasa el archivo perfil_usuario.php
 		$instruccion = "UPDATE clientes SET id='$id', nombre='$nombre', correo='$correo', telefono='$telefono', direccion='$direccion', pwd='$pwd' WHERE id = '$id'";
 		$res = mysqli_query($db, $instruccion);

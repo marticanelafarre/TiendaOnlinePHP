@@ -29,10 +29,9 @@ $pwd = $_POST["pwd"];
 	while ($fila = $resultado->fetch_assoc()) {
 		$pwd2=$fila["cuantos"];
 	}
-	
 	/////////////////
-
-	if (!strcmp($pwd2 , $pwd) == 0){
+	$pass=sha1($_POST['pwd']);
+	if (!strcmp($pwd2 , $pass) == 0){
 			echo "ERROR. Contraseña incorrecta";
 			echo "<script>setTimeout(\"location = 'login.html';\",1500);</script>";
 

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<productos>
+  <product>
+    <nombre>Festival Mil·leni</nombre>
+    <descripcion>El Festival Mil·lenni es un ciclo de conciertos que cada año lleva un programa de lo más variado.</descripcion>
+    <precio>25.00</precio>
+  </product>
+  <product>
+    <nombre>Madrid Brillante</nombre>
+    <descripcion>Nace Madrid Brillante, un nuevo festival que reúne diversos artistas en recintos especiales de la capital.</descripcion>
+    <precio>12.00</precio>
+  </product>
+  <product>
+    <nombre>Mad Cool Festival</nombre>
+    <descripcion>Mad Cool Festival regresa en 2021 para celebrar el 5º aniversario a lo grande y com muchas ganas.</descripcion>
+    <precio>179.00</precio>
+  </product>
+  <product>
+    <nombre>Rock Fest BCN</nombre>
+    <descripcion>El Rock Fest BCN regresará al parque de Can Zam de Santa Coloma de Gramanet.</descripcion>
+    <precio>100.00</precio>
+  </product>
+  <product>
+  <nombre>Bravo Madrid</nombre>
+    <descripcion>¡Bravo Madrid! es un nuevo ciclo de conciertos de otoño-invierno por teatros y espacios de la capital.</descripcion>
+    <precio>45.00</precio>
+  </product>
+  <product>
+  <nombre>Rockin Race Jamboree</nombre>
+    <descripcion>El Rockin Race Jamboree es un festival que cada mes de febrero dedica varios días a homenajear.</descripcion>
+    <precio>21.00</precio>
+  </product>
+  <product>
+  <nombre>Heavy Jaia</nombre>
+    <descripcion>Zenobia y Grendel son las bandas confirmadas de una edición atípica, con aforo limitado y con mascarilla.</descripcion>
+    <precio>35.00</precio>
+  </product>
+  <product>
+  <nombre>Snowdaze</nombre>
+    <descripcion>Si tienes debilidad por la música electrónica y el ski and snow, Snowdaze te está preparando un dia irrepetible.</descripcion>
+    <precio>115.00</precio>
+  </product>
+  <product>
+  <nombre>Iberian Warriors Metal Fest</nombre>
+    <descripcion>Afortunadamente para todos los seguidores del death, doom, black, pagan ha llegado el dia.</descripcion>
+    <precio>89.00</precio>
+  </product>
+  <product>
+  <nombre>Noches Mediterráneas</nombre>
+    <descripcion>La música en directo vuelve al Puerto de Alicante con la segunda edición de las Noches Mediterráneas.</descripcion>
+    <precio>16.00</precio>
+  </product>
+  <product>
+  <nombre>NEU! Festival</nombre>
+    <descripcion>A pesar de la situación actual, música y cultura se unen una vez más en el NEU! Festival</descripcion>
+    <precio>67.00</precio>
+  </product>
+  <product>
+  <nombre>Primavera Sound</nombre>
+    <descripcion>Ya conocemos gran parte del espectacular cartel de esta nueva entrega.</descripcion>
+    <precio>56.00</precio>
+  </product>
+</productos>

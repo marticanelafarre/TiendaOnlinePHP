@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<usuarios>
+    <usuario>
+        <nombre>marti</nombre>
+        <correo>marti@canela.com</correo>
+        <telefono>123123123</telefono>
+        <direccion>c portella</direccion>
+    </usuario>
+        <usuario>
+        <nombre>admin</nombre>
+        <correo>admin@tienda.com</correo>
+        <telefono>999999999</telefono>
+        <direccion>no disponible</direccion>
+    </usuario>
+</usuarios>

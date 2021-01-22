@@ -20,10 +20,6 @@ if (isset($_POST["nombre"]))
 		die("<script>setTimeout(\"location = 'register.html';\",1100);</script>");
 	}
 
-	if($telefono< 9){
-		echo "Error. El telefono es demasiado corto";
-		die("<script>setTimeout(\"location = 'register.html';\",1100);</script>");
-	}
 		//Primero compruebo si el nick existe
 		$instruccion = "select count(*) as cuantos from clientes where nombre = '$nombre'";
 		$res = mysqli_query($db, $instruccion);
@@ -31,7 +27,8 @@ if (isset($_POST["nombre"]))
 	
 	if ($datos['cuantos'] == 0)
 	{
-		$instruccion = "insert into clientes values ('null','$nombre','$correo','$telefono','$direccion', '$pwd')";
+		$pass=sha1($_POST['pwd']);
+		$instruccion = "insert into clientes values ('null','$nombre','$correo','$telefono','$direccion', '$pass')";
 		$res = mysqli_query($db, $instruccion);
 		if (!$res) 
 		{
